@@ -21,9 +21,9 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
         from: deployer,
         args: args,
         log: true,
-        waitConfirmations: network.config.blockConfirmations || 2,
+        waitConfirmations: network.config.blockConfirmations || 1,
     })
-    console.log("FundMe deployed")
+    console.log("FundMe deployed at address:" + fundMe.address)
     console.log("==============================")
     if (!devChains.includes(network.name) && process.env.ETHERSCAN_API_KEY) {
         await verify(fundMe.address, args)

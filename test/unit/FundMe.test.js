@@ -20,7 +20,7 @@ describe("FundMe", () => {
             deployer
         )
     })
-    describe("constructor", async () => {
+    describe("constructor", function () {
         it("sets the price feed address correctly", async () => {
             const response = await fundMe.priceFeed()
             assert.equal(response, mockV3Aggregator.address)
