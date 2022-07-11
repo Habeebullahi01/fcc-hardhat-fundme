@@ -17,7 +17,7 @@ error FundMe__NotOwner();
     @dev This implements price feeds as our library
  */
 contract FundMe {
-    uint256 public constant MINIMUM_FUND = 5 * 1e18;
+    uint256 public constant MINIMUM_FUND = 5 * 10**18;
     using PriceConverter for uint256;
 
     AggregatorV3Interface public priceFeed;
@@ -55,7 +55,7 @@ contract FundMe {
             "Not enough funds"
         );
         funders.push(msg.sender);
-        addressToAmountFunded[msg.sender] = msg.value;
+        addressToAmountFunded[msg.sender] += msg.value;
     }
 
     function Withdraw() public admin {
