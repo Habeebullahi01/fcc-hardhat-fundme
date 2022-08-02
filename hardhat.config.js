@@ -44,13 +44,14 @@ module.exports = {
             accounts: [process.env.PRIVATE_KEY],
             chainId: 4,
             blockConfirmations: 6,
+            gasPrice: 60000000,
         },
     },
     gasReporter: {
         enabled: true,
         outputFile: "gas-report.txt",
         currency: "USD",
-        coinmarketcap: process.env.COINMARKETCAP_API_KEY,
+        // coinmarketcap: process.env.COINMARKETCAP_API_KEY,
         noColors: true,
     },
     etherscan: {
